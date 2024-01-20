@@ -58,7 +58,6 @@ input:focus {
     width: 200px;
 }
 
-
 #searchBtn {
     background-color: #2b4162;
     color: white;
@@ -101,6 +100,7 @@ background-color: #6daddb;
 
 .user-info h2 {
     margin-top: 0;
+    font-size: 2rem;
 }
 
 .user-info ul {
@@ -109,24 +109,27 @@ background-color: #6daddb;
     list-style-type: none;
     padding: 0;
     max-width: 400px;
+    font-size: 1.5rem;
 }
 
 .user-info ul li {
+    font-size: 1rem;
     display: flex;
     align-items: center;
+    
 }
 
 .user-info ul li strong {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-left: 0.5rem;
 }
 
 .repo {
-    background-color: #2a2a72;
+    background-color: #2e2e3a;
     border-radius: 5px;
     display: inline-block;
     color: white;
-    font-size: 0.7rem;
+    font-size: 1rem;
     padding: 0.25rem 0.5rem;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
