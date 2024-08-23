@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GitHub Profile Roast</title>
-    <script src="roast.js" defer></script>
+    <title>GitHub Detective</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
@@ -45,28 +44,7 @@
             outline: none;
         }
 
-        #welcomePage {
-            text-align: center;
-            margin: 1rem;
-        }
-
-        #welcomePage h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: rgb(198, 195, 188);
-        }
-
-        #welcomePage p {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: rgb(198, 195, 188);
-        }
-
-        #githubLogo {
-            width: 200px;
-        }
-
-        #searchBtn {
+        button {
             background-color: #2b4162;
             color: white;
             border: none;
@@ -78,69 +56,78 @@
             font-size: 1rem;
         }
 
-        #searchBtn:hover {
+        button:hover {
             background-color: #163c63;
         }
 
-        .card {
+        .container {
+            width: 80%;
+            max-width: 800px;
             background-color: #6daddb;
             background-image: linear-gradient(315deg, #6daddb 0%, #313131 74%);
             border-radius: 20px;
             box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
                 0 15px 40px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             padding: 2rem;
-            max-width: 800px;
+            text-align: center;
             margin-bottom: 2rem;
         }
 
-        .user-info {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin-bottom: 1rem;
+        #results {
+            margin-top: 20px;
+            text-align: left;
         }
 
-        .avatar {
-            border: 5px solid #202022;
-            border-radius: 50%;
-            height: 100px;
-            width: 100px;
-            margin-right: 1rem;
-        }
-
-        .user-info h2 {
-            font-size: 2rem;
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
             color: #eee;
-            margin: 0;
         }
 
-        .roast {
-            background-color: #333;
+        .result-item {
+            margin-bottom: 15px;
+        }
+
+        .result-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .result-item a:hover {
+            text-decoration: underline;
+        }
+
+        #print-report-btn {
+            background-color: #2b4162;
             color: white;
-            padding: 1rem;
+            border: none;
             border-radius: 10px;
-            font-size: 1.2rem;
-            max-width: 800px;
-            text-align: center;
+            padding: 1rem;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        #print-report-btn:hover {
+            background-color: #163c63;
         }
     </style>
 </head>
 <body>
-    <div id="welcomePage">
-        <img src="github.jpeg" alt="GitHub Logo" id="githubLogo" />
-        <h1>Welcome to the GitHub Profile Roast</h1>
-        <p>This tool allows you to roast GitHub users.</p>
-        <p>Enter a GitHub username in the search box below to get started :~</p>
-        
-        <form id="form">
-            <input type="text" id="search" placeholder="Search a GitHub User" />
-            <button type="button" id="searchBtn">Roast</button>
-        </form>
+    <div class="container">
+        <h1>GitHub Detective</h1>
+        <input type="text" id="github-username" placeholder="Enter GitHub Username">
+        <button id="investigate-btn">Investigate</button>
+        <div id="results">
+            <div id="external-contributions"></div>
+            <div id="pull-requests"></div>
+            <div id="issues"></div>
+            <div id="top-repositories"></div>
+        </div>
+        <button id="print-report-btn">Print Report</button>
     </div>
-    <main id="main"></main>
+    <script src="script.js"></script>
 </body>
 </html>
