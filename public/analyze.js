@@ -34,6 +34,14 @@ async function fetchGitHubData(username) {
 }
 
 function displayResults(username, userData, eventsData, repoDetails) {
+    if (!document.getElementById('external-contributions') || 
+        !document.getElementById('pull-requests') || 
+        !document.getElementById('issues') || 
+        !document.getElementById('top-repositories')) {
+        console.error('One or more result elements are missing in the HTML.');
+        return;
+    }
+
     let externalContributions = [];
     let pullRequests = [];
     let issues = [];
